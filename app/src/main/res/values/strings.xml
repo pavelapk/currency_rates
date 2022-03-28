@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Курсы валют</string>
     <string name="refresh">Обновить</string>
+    <string name="rub_symbol">₽</string>
+    <string name="arrow"><![CDATA[=>]]></string>
+    <string name="amount">Сумма</string>
 </resources>

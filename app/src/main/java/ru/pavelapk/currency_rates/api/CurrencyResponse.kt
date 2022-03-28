@@ -2,9 +2,7 @@ package ru.pavelapk.currency_rates.api
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import ru.pavelapk.currency_rates.data.Currency
 import ru.pavelapk.currency_rates.data.CurrencyEntity
-import java.math.BigDecimal
 
 @Serializable
 data class CurrencyResponse(
