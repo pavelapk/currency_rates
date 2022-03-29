@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
+import androidx.recyclerview.widget.DividerItemDecoration
 import by.kirich1409.viewbindingdelegate.viewBinding
 import ru.pavelapk.currency_rates.data.CurrencyCode
 import ru.pavelapk.currency_rates.databinding.ActivityMainBinding
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val dividerItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+        binding.recycler.addItemDecoration(dividerItemDecoration)
 
         binding.recycler.adapter = currencyAdapter
         viewModel.currencies.observe(this) { currencies ->

@@ -29,7 +29,7 @@ class CurrenciesViewModel(app: Application) : AndroidViewModel(app) {
         refreshCurrencies()
         viewModelScope.launch {
             while (true) {
-                refreshCurrencies(showAnimation = false)
+                refreshCurrencies(silentRefreshing = true)
                 delay(30000)
             }
         }
@@ -39,8 +39,8 @@ class CurrenciesViewModel(app: Application) : AndroidViewModel(app) {
         selectedCurrency = currencies.value?.find { it.id == currencyId }
     }
 
-    fun refreshCurrencies(showAnimation: Boolean = true) = viewModelScope.launch {
-        if (showAnimation) _isRefreshing.value = true
+    fun refreshCurrencies(silentRefreshing: Boolean = false) = viewModelScope.launch {
+        if (!silentRefreshing) _isRefreshing.value = true
 
         currencyRepository.loadCurrenciesFromApi(
             onFailure = {

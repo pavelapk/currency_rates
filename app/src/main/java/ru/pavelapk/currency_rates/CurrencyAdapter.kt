@@ -42,6 +42,8 @@ class CurrencyAdapter : ListAdapter<Currency, CurrencyAdapter.ViewHolder>(diff) 
                 tvCharCode.text = currency.charCode
                 tvName.text = currency.name
                 tvValue.text = currency.value.toString()
+                tvNominal.text =
+                    itemView.context.getString(R.string.nominal, currency.nominal.toString())
                 tvDiff.text = DecimalFormat("#.####").apply {
                     positivePrefix = "+"
                 }.format(currency.diff)
