@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import ru.pavelapk.currency_rates.data.Currency
 import ru.pavelapk.currency_rates.databinding.ItemCurrencyBinding
-import java.math.BigDecimal
 import java.text.DecimalFormat
 
 class CurrencyAdapter : ListAdapter<Currency, CurrencyAdapter.ViewHolder>(diff) {

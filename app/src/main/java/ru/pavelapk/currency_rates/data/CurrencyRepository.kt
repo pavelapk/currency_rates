@@ -14,8 +14,11 @@ class CurrencyRepository(context: Context) {
         list.map { it.toDomain() }
     }
 
-    suspend fun loadCurrenciesFromApi() {
-        val dailyResponse = currencyService.daily().getOrElse { return }
+    suspend fun loadCurrenciesFromApi(onFailure: (exception: Throwable) -> Unit) {
+        val dailyResponse = currencyService.daily().getOrElse {
+            onFailure.invoke(it)
+            return
+        }
         val currencies = dailyResponse.currencies.values.map {
             it.toEntity()
         }

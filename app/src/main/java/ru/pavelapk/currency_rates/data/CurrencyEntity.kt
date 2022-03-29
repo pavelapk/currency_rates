@@ -13,7 +13,6 @@ data class CurrencyEntity(
     val value: Double,
     val previous: Double
 ) {
-    //TODO search best practices about converting
     fun toDomain() = Currency(
         id,
         charCode,
