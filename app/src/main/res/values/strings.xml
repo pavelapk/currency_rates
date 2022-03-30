@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Курсы валют</string>
+    <string name="rub_symbol">₽</string>
+    <string name="arrow"><![CDATA[=>]]></string>
+    <string name="amount">Сумма</string>
+    <string name="unknown_error">unknown error</string>
+    <string name="nominal">%s шт.</string>
 </resources>
